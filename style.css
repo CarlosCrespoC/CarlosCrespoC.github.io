@@ -197,6 +197,53 @@ body {
     color: #1d4ed8;
 }
 
+/* ===== PÁGINAS INDIVIDUALES DE PROYECTO ===== */
+
+.project-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.project-hero {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 90px 32px 100px;
+}
+
+.project-hero h1 {
+    max-width: 900px;
+    font-size: 3.2rem;
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.project-hero .description {
+    max-width: 850px;
+    margin-bottom: 36px;
+}
+
+.project-detail {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 40px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+}
+
+.project-detail h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+}
+
+.project-detail p {
+    max-width: 900px;
+    font-size: 1.05rem;
+    color: #475569;
+}
+
 /* ===== PIE DE PÁGINA ===== */
 
 footer {
@@ -246,4 +293,22 @@ footer {
     .project-card {
         padding: 24px;
     }
+    .project-hero {
+        padding: 70px 24px 80px;
+    }
+
+    .project-hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .project-detail {
+        padding: 28px 24px;
+        margin-top: 22px;
+        margin-bottom: 22px;
+    }
+
+    .project-detail h2 {
+        font-size: 1.5rem;
+    }
+    
 }
