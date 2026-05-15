@@ -65,6 +65,17 @@ body {
     padding: 110px 32px 140px;
 }
 
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.hero-main {
+    max-width: 760px;
+}
+
 .intro {
     font-size: 1.1rem;
     color: #2563eb;
@@ -104,6 +115,37 @@ body {
 
 .button:hover {
     background-color: #1d4ed8;
+}
+
+.hero-panel {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 34px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.hero-panel-label {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 20px;
+}
+
+.hero-panel-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hero-panel-items span {
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-weight: 600;
+    color: #1e293b;
 }
 
 /* ===== SECCIONES ===== */
@@ -469,6 +511,15 @@ footer {
 
     .contact-links {
         width: 100%;
+    }
+
+        .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-panel {
+        padding: 26px 22px;
     }
     
 }
