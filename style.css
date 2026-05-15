@@ -189,11 +189,23 @@ body {
     gap: 28px;
 }
 
+.project-card-media {
+    height: 210px;
+    background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
 .project-card {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 18px;
-    padding: 30px;
+    overflow: hidden;
     box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -201,6 +213,10 @@ body {
 .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.project-content {
+    padding: 30px;
 }
 
 .project-content h3 {
@@ -403,6 +419,20 @@ body {
     margin-bottom: 36px;
 }
 
+.project-hero-media {
+    margin-top: 42px;
+    min-height: 360px;
+    background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
 .project-detail {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
@@ -532,6 +562,21 @@ footer p {
 
     .hero-panel {
         padding: 26px 22px;
+    }
+
+        .project-card-media {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 24px;
+    }
+
+    .project-hero-media {
+        min-height: 220px;
+        margin-top: 32px;
+        padding: 20px;
+        text-align: center;
     }
     
 }
