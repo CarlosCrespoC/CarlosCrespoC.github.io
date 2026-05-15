@@ -24,8 +24,9 @@
             <p class="intro">Proyecto de mecatrónica y automatización</p>
             <h1>Mesa roto-basculante integrada con ABB</h1>
             <p class="description">
-                Página en construcción. Aquí se presentará el desarrollo del sistema,
-                su integración con el robot industrial y los resultados obtenidos.
+                Desarrollo de un posicionador robótico roto-basculante de dos grados de libertad
+                permite reorientar piezas durante impresión 3D, para limitar la generación de soportes.
+                Se integra con un robot industrial ABB IRB 2600 mediante comunicación TCP/IP.
             </p>
 
             <a href="../index.html#projects" class="button">Volver a proyectos</a>
@@ -41,35 +42,85 @@
         <section class="section project-detail">
             <h2>Problema</h2>
             <p>
-                Contenido pendiente.
+                En impresión 3D por deposición de material, las geometrías con voladizos pronunciados
+                suelen requerir estructuras de soporte. Estas aumentan el tiempo de impresión,
+                el consumo de material y el trabajo de posprocesado, además de poder afectar
+                el acabado superficial de la pieza.
+            </p>
+            <p>
+                El proyecto abordó esta limitación mediante la reorientación controlada de la pieza
+                durante el proceso de fabricación, con el objetivo de mantener ángulos de deposición
+                más favorables y reducir la dependencia de soportes.
             </p>
         </section>
 
         <section class="section project-detail">
             <h2>Solución</h2>
             <p>
-                Contenido pendiente.
+                Se desarrolló una mesa roto-basculante de dos grados de libertad capaz de modificar
+                la orientación de la superficie de impresión mediante un eje de inclinación y un eje
+                de rotación. El sistema fue concebido como un posicionador complementario para trabajar
+                junto con un robot industrial ABB IRB 2600.
+            </p>
+            <p>
+                La solución integró diseño mecánico, transmisiones por banda síncrona, motores paso a paso,
+                control embebido con Arduino Mega, regulación de una cama calefactada y comunicación Ethernet
+                mediante TCP/IP con el controlador ABB IRC5.
             </p>
         </section>
 
         <section class="section project-detail">
             <h2>Mi contribución</h2>
             <p>
-                Contenido pendiente.
+                Diseñé e implementé la solución de manera integral, abarcando el desarrollo mecánico,
+                la electrónica de potencia y control, la programación del firmware y la integración
+                de comunicación con el robot industrial.
+            </p>
+            <p>
+                Mi trabajo incluyó el modelado CAD del mecanismo, la selección de transmisiones,
+                la simulación dinámica de requerimientos de torque, el desarrollo del protocolo
+                de comandos entre ABB y Arduino, la lógica de movimiento de los ejes, el control
+                térmico de la cama y la validación experimental del prototipo.
             </p>
         </section>
 
         <section class="section project-detail">
             <h2>Proceso</h2>
             <p>
-                Contenido pendiente.
+                El proyecto inició con el análisis del problema de reorientación de piezas en impresión 3D
+                y la definición de una arquitectura de dos grados de libertad. A partir de ello,
+                se diseñó el mecanismo en Autodesk Inventor y se evaluó su comportamiento mediante
+                simulación dinámica para estimar requerimientos de torque y validar la viabilidad del sistema.
+            </p>
+            <p>
+                Posteriormente se construyó el prototipo físico, incorporando motores paso a paso,
+                drivers TB6600, una cama calefactada, sensores de referencia y una caja de control.
+                Se programó un Arduino Mega para gestionar movimiento, homing, calibración y temperatura.
+            </p>
+            <p>
+                Finalmente, se implementó la comunicación TCP/IP con el controlador ABB IRC5,
+                permitiendo enviar comandos de orientación, consultar estados del sistema
+                y coordinar la operación de la mesa con una interfaz desarrollada en RobotStudio
+                y FlexPendant.
             </p>
         </section>
 
         <section class="section project-detail">
             <h2>Resultados</h2>
             <p>
-                Contenido pendiente.
+                El prototipo logró ejecutar movimientos controlados de inclinación y rotación,
+                responder a comandos enviados desde el entorno ABB y operar con una cama calefactada
+                en el rango requerido para pruebas de impresión.
+            </p>
+            <p>
+                En la validación experimental se realizaron pruebas de posicionamiento a distintos ángulos,
+                obteniendo una precisión aproximada de 0,05 y una repetibilidad cercana a 0,039,
+                valores considerados adecuados para tareas de reorientación durante el proceso de deposición.
+            </p>
+            <p>
+                El proyecto demostró la factibilidad de integrar un posicionador mecatrónico
+                con un robot industrial para explorar estrategias de impresión 3D con menor dependencia
+                de soportes y mayor flexibilidad de orientación.
             </p>
         </section>
 
