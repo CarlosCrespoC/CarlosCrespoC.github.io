@@ -24,8 +24,10 @@
             <p class="intro">Proyecto de robótica móvil y navegación autónoma</p>
             <h1>F1TENTH / RoboRacer Ecuador</h1>
             <p class="description">
-                Página en construcción. Aquí se presentará la plataforma de vehículo autónomo,
-                su integración técnica y su participación en competencia.
+                El proyecto consistió en la integración y programación de un vehículo de
+                carreras autónomo a escala 1:10 bajo el estándar de la plataforma internacional F1TENTH.
+                El objetivo principal fue diseñar un sistema  de software capaz de competir de forma autónoma
+                en circuitos cerrados, enfrentándose a los retos de la robótica móvil moderna en la competencia RoboRacer.
             </p>
 
             <a href="../index.html#projects" class="button">Volver a proyectos</a>
@@ -41,21 +43,35 @@
         <section class="section project-detail">
             <h2>Problema</h2>
             <p>
-                Contenido pendiente.
+                Los vehículos autónomos de carreras deben tomar decisiones críticas en milisegundos.
+                El desafío radicaba en integrar subsistemas complejos de percepción, localización, control y navegación 
+                dentro de una plataforma con recursos computacionales embebidos limitados.
+                El entorno dinámico de una pista de carreras real exige maximizar la velocidad de procesamiento y la estabilidad 
+                del vehículo, evitando colisiones mientras se traza la trayectoria óptima de manera continua y en tiempo real.
             </p>
         </section>
 
         <section class="section project-detail">
             <h2>Solución</h2>
             <p>
-                Contenido pendiente.
+                Se diseñó una arquitectura de software en ROS2, priorizando la velocidad y finalización de la carrera sin colisión. 
+                Nuestro equipo rompió con los esquemas tradicionales al no utilizar sensores inerciales (IMU), basando toda la percepción y el
+                posicionamiento puramente en un sensor LiDAR Hokuyo.
+                Para la estimación de posición dentro del circuito, se implementó el paquete AMCL (Adaptive Monte Carlo Localization), logrando una localización
+                en tiempo real.
+                Al utilizar el algoritmo de navegación "Pure Pursuit", se logró una conducción autónoma eficiente, permitiendo al vehículo seguir la 
+                trayectoria óptima en la pista, maximizando la velocidad y minimizando las colisiones.
             </p>
         </section>
 
         <section class="section project-detail">
             <h2>Mi contribución</h2>
             <p>
-                Contenido pendiente.
+                
+                Integré el algoritmo "Pure Pursuit" de navegación autónoma en ROS2 y su implementación con los nodos del firmware del F1TENTH.
+                Estructuré la alimentación para el sistema electrónico y el diseño de la distribución de 
+                componentes para garantizar la robustez física del prototipo.
+
             </p>
         </section>
 
