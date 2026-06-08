@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seguridad vehicular con IA| Carlos Crespo</title>
+    <title>Seguridad vehicular con visión por computadora | Carlos Crespo</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -21,75 +21,255 @@
         </nav>
 
         <div class="project-hero">
-            <p class="intro">Proyecto de inteligencia artificial y visión por computadora</p>
+            <p class="intro">Inteligencia artificial · Visión por computadora · Monitoreo vehicular</p>
+
             <h1>Seguridad vehicular con visión por computadora</h1>
+
             <p class="description">
-                Proyecto de inteligencia artificial y visión por computadora para el 
-                reconocimiento de placas vehiculares en un recinto urbano.
+                Desarrollo de un sistema de visión por computadora para el reconocimiento de placas
+                vehiculares, registro de eventos de entrada y salida, y monitoreo automatizado en un
+                recinto urbano mediante procesamiento de video en tiempo real.
             </p>
+
+            <div class="project-tags">
+                <span>Visión por computadora</span>
+                <span>Reconocimiento de placas</span>
+                <span>IA</span>
+                <span>Procesamiento de video</span>
+                <span>Tiempo real</span>
+            </div>
 
             <a href="../index.html#projects" class="button">Volver a proyectos</a>
                         
             <div class="project-hero-media">
                 <img 
                     src="../assets/img/project-hero/Seguridad/seguridad-vehicular.jpg"
-                    alt="Detección vehicular mediante visión por computadora">
+                    alt="Sistema de detección vehicular mediante visión por computadora">
             </div>
         </div>
     </header>
 
     <main>
 
-        <section class="section project-detail">
-            <h2>Problema</h2>
-            <p>
-                Los sistemas tradicionales de monitoreo y control en recintos urbanos dependen frecuentemente 
-                de la supervisión humana o de registros manuales propensos a errores. Esto dificulta la identificación
-                de eventos en tiempo real y hace casi imposible llevar un control exacto de los tiempos de permanencia
-                o la reincidencia de paso de los vehículos en escenarios dinámicos, limitando la capacidad de respuesta
-                ante alertas de seguridad.
-            </p>
+        <section class="section project-overview-grid">
+            <div class="overview-card">
+                <span>Rol</span>
+                <strong>Desarrollo e integración de visión por computadora</strong>
+            </div>
+
+            <div class="overview-card">
+                <span>Área</span>
+                <strong>IA aplicada a seguridad vehicular</strong>
+            </div>
+
+            <div class="overview-card">
+                <span>Entrada</span>
+                <strong>Secuencias de video de cámaras del recinto</strong>
+            </div>
+
+            <div class="overview-card">
+                <span>Salida</span>
+                <strong>Placa, evento, hora de ingreso y salida</strong>
+            </div>
         </section>
 
-        <section class="section project-detail">
-            <h2>Solución</h2>
-            <p>
-                Se implementó y desplegó un sistema de visión artificial automatizado para el reconocimiento de placas vehiculares
-                a través de las cámaras del recinto. La solución no solo identifica el vehículo, sino que registra sus tiempos de 
-                llegada y salida. El sistema fue diseñado para procesar secuencias de video e inferir datos en tiempo real, operando 
-                eficientemente sobre servidores locales o en plataformas embebidas.
-            </p>
+
+        <section class="section project-split">
+            <article class="project-info-card">
+                <h2>Problema</h2>
+                <p>
+                    El monitoreo vehicular en recintos urbanos suele depender de supervisión humana
+                    o registros manuales, lo que puede generar errores, retrasos y dificultad para
+                    identificar eventos relevantes en tiempo real.
+                </p>
+            </article>
+
+            <article class="project-info-card">
+                <h2>Solución</h2>
+                <p>
+                    Se implementó un sistema automatizado de visión por computadora capaz de detectar
+                    vehículos, reconocer placas y registrar eventos de entrada y salida para mejorar
+                    el control vehicular dentro del recinto.
+                </p>
+            </article>
         </section>
+
 
         <section class="section project-detail">
             <h2>Mi contribución</h2>
-            <p>
-                Participé en todas las etapas del proyecto, desde la conceptualización y diseño, hasta su implementación y despliegue.
-                Esto incluyó la selección de modelos de visión por computadora adecuados, el uso de bibliotecas existentes para el  
-                reconocimiento de placas, y la integración del sistema con la infraestructura de vigilancia existente en el recinto.
-            </p>
+
+            <div class="contribution-list">
+                <div>Definición de requerimientos para el monitoreo vehicular automatizado.</div>
+                <div>Selección de modelos y herramientas de visión por computadora.</div>
+                <div>Preparación y validación de datos para pruebas del sistema.</div>
+                <div>Integración del reconocimiento de placas con secuencias de video.</div>
+                <div>Desarrollo de lógica para registrar eventos de entrada y salida.</div>
+                <div>Pruebas iterativas para mejorar estabilidad y reconocimiento.</div>
+                <div>Despliegue del sistema en servidor local y plataforma embebida.</div>
+            </div>
         </section>
 
+
         <section class="section project-detail">
-            <h2>Proceso</h2>
-            <p>
-                El proyecto comenzó con la definición de los requerimientos de seguridad y la selección de una arquitectura de inteligencia 
-                artificial adecuada para la detección de placas. Tras preparar el dataset, se entrenaron y validaron los modelos de visión.
-                Posteriormente, se integró el reconocimiento de caracteres para obtener la información de las placas, para finalmente integrar
-                el sistema de lógica temporal que registra los eventos. Finalmente, se realizaron pruebas iterativas en timepo real
-                para optimizar la estabilidad del sistema.
-            </p>
+            <h2>Arquitectura técnica</h2>
+
+            <div class="tech-grid">
+                <article class="tech-card">
+                    <h3>Captura de video</h3>
+                    <p>
+                        El sistema procesa secuencias de video provenientes de las cámaras del recinto
+                        para identificar vehículos en zonas de monitoreo.
+                    </p>
+                </article>
+
+                <article class="tech-card">
+                    <h3>Detección vehicular</h3>
+                    <p>
+                        Se utiliza visión por computadora para localizar vehículos dentro de la escena
+                        y preparar la región de interés para el análisis de placa.
+                    </p>
+                </article>
+
+                <article class="tech-card">
+                    <h3>Reconocimiento de placa</h3>
+                    <p>
+                        Se integra una etapa de reconocimiento de caracteres para extraer la información
+                        de la placa vehicular a partir de la imagen procesada.
+                    </p>
+                </article>
+
+                <article class="tech-card">
+                    <h3>Registro de eventos</h3>
+                    <p>
+                        La lógica temporal del sistema permite registrar ingresos, salidas, permanencia
+                        y reincidencia de paso de los vehículos detectados.
+                    </p>
+                </article>
+            </div>
         </section>
+
+
+        <section class="section project-detail">
+            <h2>Proceso de desarrollo</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span>01</span>
+                    <div>
+                        <h3>Definición del caso de uso</h3>
+                        <p>
+                            Se identificaron los requerimientos del recinto: reconocimiento de placas,
+                            control de eventos y operación en condiciones reales de monitoreo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>02</span>
+                    <div>
+                        <h3>Preparación del flujo de visión</h3>
+                        <p>
+                            Se estructuró el procesamiento de video para detectar vehículos, aislar zonas
+                            relevantes y alimentar la etapa de reconocimiento.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>03</span>
+                    <div>
+                        <h3>Reconocimiento de placas</h3>
+                        <p>
+                            Se integraron modelos y bibliotecas de visión por computadora para extraer
+                            información de placas vehiculares a partir de las imágenes capturadas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>04</span>
+                    <div>
+                        <h3>Registro y lógica temporal</h3>
+                        <p>
+                            Se implementó la lógica para asociar placas con eventos de entrada, salida
+                            y tiempo de permanencia dentro del recinto.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>05</span>
+                    <div>
+                        <h3>Validación y despliegue</h3>
+                        <p>
+                            Se realizaron pruebas iterativas en video real para optimizar estabilidad,
+                            reconocimiento y respuesta del sistema en tiempo real.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <section class="section project-detail">
             <h2>Resultados</h2>
+
+            <div class="results-grid">
+                <article class="result-card">
+                    <strong>+92%</strong>
+                    <p>Tasa de reconocimiento de placas en condiciones óptimas de captura.</p>
+                </article>
+
+                <article class="result-card">
+                    <strong>Tiempo real</strong>
+                    <p>Procesamiento de secuencias de video sin retrasos significativos.</p>
+                </article>
+
+                <article class="result-card">
+                    <strong>Eventos</strong>
+                    <p>Registro de ingreso, salida y permanencia de vehículos en el recinto.</p>
+                </article>
+
+                <article class="result-card">
+                    <strong>Despliegue</strong>
+                    <p>Operación en servidor local y posibilidad de ejecución en plataforma embebida.</p>
+                </article>
+            </div>
+        </section>
+
+
+        <section class="section project-detail">
+            <h2>Galería del proyecto</h2>
+
+            <div class="project-gallery">
+                <img 
+                    src="../assets/img/project-hero/Seguridad/seguridad-vehicular.jpg"
+                    alt="Detección vehicular mediante visión por computadora">
+
+                <!-- Agrega aquí más imágenes si tienes capturas del sistema, pruebas o interfaz -->
+                <!--
+                <img 
+                    src="../assets/img/project-hero/Seguridad/captura-deteccion.jpg"
+                    alt="Captura del sistema detectando un vehículo">
+
+                <img 
+                    src="../assets/img/project-hero/Seguridad/interfaz-registro.jpg"
+                    alt="Interfaz de registro de eventos vehiculares">
+                -->
+            </div>
+        </section>
+
+
+        <section class="section project-detail final-project-note">
+            <h2>Conclusión técnica</h2>
             <p>
-                El sistema se desplegó exitosamente en el recinto, logrando una tasa de reconocimiento de placas superior al 92% en condiciones óptimas.
-                Además, el sistema demostró ser capaz de operar en tiempo real, procesando secuencias de video sin retrasos significativos, lo que permitió
-                una mejora sustancial en la capacidad de monitoreo y control del recinto.
-                Las iteraciones de prueba permitieron minimizar los errores, demostrando la viabilidad técnica de utilizar visión por computadora
-                en hardware embebido para la automatización y seguridad vehicular.
+                El proyecto demostró la viabilidad de aplicar visión por computadora para automatizar
+                procesos de monitoreo vehicular en un recinto urbano. La solución permitió reconocer
+                placas, registrar eventos y mejorar el control operativo mediante procesamiento de video
+                en tiempo real.
             </p>
+
+            <a href="../index.html#projects" class="button">Ver más proyectos</a>
         </section>
 
     </main>
