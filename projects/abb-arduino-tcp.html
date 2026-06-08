@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunicación ABB Arduino TCP/IP| Carlos Crespo</title>
+    <title>Comunicación TCP/IP entre ABB IRC5 y Arduino Mega | Carlos Crespo</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -21,113 +21,246 @@
         </nav>
 
         <div class="project-hero">
-            <p class="intro">Proyecto de integración industrial y sistemas embebidos</p>
-            <h1>Comunicación ABB - Arduino mediante TCP/IP</h1>
+            <p class="intro">Integración industrial · Sistemas embebidos · Comunicación TCP/IP</p>
+
+            <h1>Comunicación TCP/IP entre ABB IRC5 y Arduino Mega</h1>
+
             <p class="description">
-                El proyecto consistió en el diseño e implementación de un puente de comunicación bidireccional en tiempo real mediante
-                Sockets TCP/IP entre un controlador industrial ABB IRC5 y un sistema embebido Arduino Mega.<br>
-                El objetivo principal fue establecer un canal de datos en una configuración Cliente-Servidor para coordinar de forma segura funciones auxiliares,  
-                específicamente la sincronización de movimientos de un posicionador robótico.
+                Diseño e implementación de una arquitectura cliente-servidor mediante sockets TCP/IP
+                para comunicar un controlador industrial ABB IRC5 con un sistema embebido Arduino Mega,
+                permitiendo el intercambio de comandos y estados para coordinar funciones auxiliares
+                de un posicionador robótico.
             </p>
+
+            <div class="project-tags">
+                <span>ABB IRC5</span>
+                <span>RAPID</span>
+                <span>Arduino Mega</span>
+                <span>Ethernet</span>
+                <span>TCP/IP</span>
+                <span>FlexPendant</span>
+            </div>
 
             <a href="../index.html#projects" class="button">Volver a proyectos</a>
             
             <div class="project-hero-media">
                 <img 
                     src="../assets/img/project-hero/ABB_Arduino/Arduino_Ethernet.jpg"
-                    alt="Arquitectura de comunicación entre ABB IRC5 y Arduino">
+                    alt="Arquitectura de comunicación entre ABB IRC5 y Arduino Mega mediante TCP/IP">
             </div>
-
         </div>
     </header>
 
     <main>
 
-        <section class="section project-detail">
-            <h2>Problema</h2>
-            <p>
-                Los controladores industriales como el ABB IRC5 ofrecen una precisión milimétrica en control de trayectorias, pero presentan 
-                limitaciones o costos elevados al integrarse con periféricos personalizados de bajo nivel, como sistemas de monitoreo térmico 
-                dedicado. <br>
-                El desafío radicaba en desarrollar un enlace de comunicación confiable que no requiriera de licencias o protocolos
-                industriales complejos (como EtherNet/IP), los cuales habrían sobrecargado la capacidad de procesamiento del microcontrolador 
-                Arduino y condicionado el presupuesto del proyecto.
-            </p>
+        <section class="section project-overview-grid">
+            <div class="overview-card">
+                <span>Rol</span>
+                <strong>Programación e integración de comunicación</strong>
+            </div>
+
+            <div class="overview-card">
+                <span>Área</span>
+                <strong>Robótica industrial y sistemas embebidos</strong>
+            </div>
+
+            <div class="overview-card">
+                <span>Arquitectura</span>
+                <strong>Cliente ABB IRC5 / Servidor Arduino</strong>
+            </div>
+
+            <div class="overview-card">
+                <span>Protocolo</span>
+                <strong>Sockets TCP/IP sobre Ethernet</strong>
+            </div>
         </section>
 
-        <section class="section project-detail">
-            <h2>Solución</h2>
-            <p>
-                Se diseñó una arquitectura de red local utilizando Stream Sockets bajo el protocolo TCP, configurada en un modelo Cliente-Servidor. 
-                Para optimizar el rendimiento y evitar dependencias de sensores o drivers de pago, el Arduino Mega se estableció como el Servidor 
-                (escuchando de forma pasiva en un puerto específico), mientras que el controlador ABB IRC5 asumió el rol de Cliente, iniciando la
-                conexión de red de forma directa.<br>
-                Esta estructura permitió el intercambio directo de tramas de bytes puros para el envío de comandos y la recepción de estados del sistema
-                en tiempo real, garantizando la fluidez necesaria para el control térmico coordinado y la alineación de movimientos mecánicos del 
-                posicionador robótico.
-            </p>
+
+        <section class="section project-split">
+            <article class="project-info-card">
+                <h2>Problema</h2>
+                <p>
+                    El controlador ABB IRC5 permite ejecutar trayectorias robóticas con alta precisión,
+                    pero la integración con periféricos personalizados de bajo nivel puede requerir
+                    hardware adicional, licencias o protocolos industriales más complejos.
+                </p>
+            </article>
+
+            <article class="project-info-card">
+                <h2>Solución</h2>
+                <p>
+                    Se implementó un canal de comunicación mediante sockets TCP/IP, donde el ABB IRC5
+                    actúa como cliente y el Arduino Mega como servidor. Esta arquitectura permitió enviar
+                    comandos, recibir estados y coordinar funciones auxiliares del posicionador robótico.
+                </p>
+            </article>
         </section>
+
 
         <section class="section project-detail">
             <h2>Mi contribución</h2>
-            <p>
-                Dentro del equipo, me encargué del desarrollo del software de conectividad y la lógica de control en ambos extremos de la arquitectura,
-                asegurando que la comunicación fuera robusta y libre de errores de lectura:<br><br>
 
-                <b>Desarrollo en RAPID (Lado Cliente):</b> Programé el manejo de la red en el entorno del robot industrial mediante las instrucciones 
-                de Socket Messaging de ABB (SocketCreate y SocketConnect), estructurando el flujo para el envío seguro de comandos y la recepción síncrona
-                de las confirmaciones de estado.<br><br>
-
-                <b>Desarrollo en ARDUINO (Lado Servidor):</b> Escribí el firmware para el Arduino Mega empleando la librería Ethernet.h. Configuré las instancias
-                de EthernetServer y EthernetClient para procesar las peticiones del robot, ejecutando el desempaquetado (parsing) de los mensajes entrantes para
-                activar las tareas físicas de movimiento y control térmico del posicionador robótico.<br><br>
-
-                <b>Depuración e Integración Virtual/Física:</b> Realicé las pruebas iniciales de conectividad mediante la simulación en RobotStudio para validar 
-                la lógica del protocolo. Posteriormente, ejecuté el despliegue físico y la sintonización de tiempos de respuesta directamente en la celda
-                utilizando el FlexPendant.
-
-            </p>
+            <div class="contribution-list">
+                <div>Diseño de la arquitectura cliente-servidor entre ABB IRC5 y Arduino Mega.</div>
+                <div>Programación de la lógica de comunicación en RAPID usando Socket Messaging.</div>
+                <div>Desarrollo del firmware en Arduino con la librería Ethernet.h.</div>
+                <div>Definición de tramas para comandos, estados, posición y lectura térmica.</div>
+                <div>Integración de la comunicación con funciones de movimiento y control térmico.</div>
+                <div>Validación inicial en RobotStudio antes del despliegue físico.</div>
+                <div>Pruebas de conectividad, respuesta y sincronización desde el FlexPendant.</div>
+            </div>
         </section>
+
 
         <section class="section project-detail">
-            <h2>Proceso</h2>
-            <p>
-                El desarrollo del proyecto se ejecutó bajo un flujo de ingeniería dividido en tres etapas principales, orientadas a la conectividad 
-                robusta y la centralización del control.<br><br>
+            <h2>Arquitectura técnica</h2>
 
-                <b>Configuración de Red y Arquitectura Cliente-Servidor:</b> Diseñamos el direccionamiento IP estático para el controlador IRC5 y el
-                Arduino Mega. En esta fase, definimos la estructura de las tramas de datos y el mapeo de variables esenciales (coordenadas de posición y 
-                lecturas térmicas) que viajarían a través de los sockets TCP/IP.<br><br>
+            <div class="tech-grid">
+                <article class="tech-card">
+                    <h3>Cliente ABB IRC5</h3>
+                    <p>
+                        Programación en RAPID para crear el socket, iniciar la conexión,
+                        enviar comandos y recibir respuestas desde el sistema embebido.
+                    </p>
+                </article>
 
-                <b>Desarrollo de Lógica y Diseño de la Interfaz HMI:</b> Escribimos en paralelo el firmware en C++ y la lógica en RAPID para el intercambio 
-                de mensajes. Simultáneamente, diseñamos una aplicación de interfaz HMI personalizada para el FlexPendant, vinculando los datos recibidos por
-                el socket para desplegar en pantalla alertas de temperatura, el estado actual del posicionador robótico y los botones de activación de comandos
-                hacia el Arduino.<br><br>
+                <article class="tech-card">
+                    <h3>Servidor Arduino Mega</h3>
+                    <p>
+                        Firmware basado en Ethernet.h para escuchar peticiones, procesar mensajes
+                        entrantes y ejecutar acciones físicas del posicionador robótico.
+                    </p>
+                </article>
 
-                <b>Validación de Campo y Monitoreo en Tiempo Real:</b> Realizamos el despliegue físico en la celda robótica, utilizando la aplicación diseñada
-                para operar el posicionador. Durante las pruebas, se verificó que las lecturas de temperatura y las variables de posición se reflejaran de forma
-                fluida en la pantalla, al mismo tiempo que se validó la respuesta inmediata del sistema al activar los comandos desde los botones de la Flexpendant.
+                <article class="tech-card">
+                    <h3>Intercambio de datos</h3>
+                    <p>
+                        Uso de tramas simples para transmitir comandos, confirmaciones de estado,
+                        variables de posición y lecturas relacionadas con el control térmico.
+                    </p>
+                </article>
 
-            </p>
+                <article class="tech-card">
+                    <h3>Interfaz de operación</h3>
+                    <p>
+                        Integración con RobotStudio y FlexPendant para visualizar estados,
+                        activar comandos y supervisar la respuesta del sistema en la celda robótica.
+                    </p>
+                </article>
+            </div>
         </section>
+
+
+        <section class="section project-detail">
+            <h2>Proceso de desarrollo</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span>01</span>
+                    <div>
+                        <h3>Definición de arquitectura</h3>
+                        <p>
+                            Se estableció una configuración cliente-servidor, asignando al ABB IRC5
+                            el rol de cliente y al Arduino Mega el rol de servidor TCP.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>02</span>
+                    <div>
+                        <h3>Configuración de red</h3>
+                        <p>
+                            Se definió el direccionamiento IP estático, el puerto de comunicación
+                            y la estructura básica de los mensajes enviados entre ambos sistemas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>03</span>
+                    <div>
+                        <h3>Programación en RAPID y Arduino</h3>
+                        <p>
+                            Se desarrolló la lógica de socket en RAPID y el firmware en Arduino
+                            para recibir, interpretar y responder a las solicitudes del controlador.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>04</span>
+                    <div>
+                        <h3>Pruebas en simulación</h3>
+                        <p>
+                            Se validó la secuencia de conexión y el flujo de comandos desde RobotStudio
+                            antes de ejecutar pruebas físicas en la celda robótica.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>05</span>
+                    <div>
+                        <h3>Validación física</h3>
+                        <p>
+                            Se realizaron pruebas con el FlexPendant para verificar el envío de comandos,
+                            la lectura de estados y la sincronización con el posicionador robótico.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <section class="section project-detail">
             <h2>Resultados</h2>
+
+            <div class="results-grid">
+                <article class="result-card">
+                    <strong>TCP/IP</strong>
+                    <p>Comunicación bidireccional entre el ABB IRC5 y el Arduino Mega.</p>
+                </article>
+
+                <article class="result-card">
+                    <strong>RAPID</strong>
+                    <p>Control de conexión, envío de comandos y recepción de estados desde el robot.</p>
+                </article>
+
+                <article class="result-card">
+                    <strong>HMI</strong>
+                    <p>Supervisión de estados y activación de comandos desde el FlexPendant.</p>
+                </article>
+
+                <article class="result-card">
+                    <strong>Bajo costo</strong>
+                    <p>Integración con hardware abierto sin depender de tarjetas o licencias adicionales.</p>
+                </article>
+            </div>
+        </section>
+
+
+        <section class="section project-detail">
+            <h2>Galería del proyecto</h2>
+
+            <div class="project-gallery">
+                <img 
+                    src="../assets/img/project-hero/ABB_Arduino/Arduino_Ethernet.jpg"
+                    alt="Diagrama o montaje de comunicación Ethernet entre ABB IRC5 y Arduino Mega">
+            </div>
+        </section>
+
+
+        <section class="section project-detail final-project-note">
+            <h2>Conclusión técnica</h2>
             <p>
-                <b>Sincronización Mecatrónica:</b> Se logró coordinar con precisión los movimientos de ejes del posicionador robótico con lo visualizado en la HMI,
-                ejecutando las transiciones de forma fluida y sin desfases gracias al intercambio directo de datos por los sockets TCP/IP.<br><br>
-
-                <b>Centralización del Monitoreo en Tiempo Real:</b> La aplicación diseñada para el FlexPendant permite al operador
-                supervisar las lecturas térmicas y los estados posicionales de forma instantánea, en un lazo de manera intuitiva y segura.<br><br>
-
-                <b>Optimización de Costos y Licenciamiento:</b> Se demostró la viabilidad técnica de expandir las capacidades de una celda industrial utilizando
-                hardware de código abierto (Arduino Mega), logrando un rendimiento óptimo de comunicación robusta sin la necesidad de invertir en licencias de
-                protocolos propietarios o tarjetas de expansión dedicadas.<br><br>
-
-                <b>Estabilidad y Alta Confiabilidad del Enlace:</b> Durante las jornadas de pruebas experimentales y operación continua,
-                la arquitectura Cliente-Servidor mantuvo una baja tasa de pérdida de paquetes y latencia, validando la estabilidad de los Raw Sockets para 
-                la integración mecatrónica de bajo nivel.
+                El proyecto permitió validar una alternativa práctica para integrar un controlador industrial
+                ABB IRC5 con un sistema embebido Arduino mediante sockets TCP/IP. La solución facilitó el
+                intercambio de comandos y estados en una arquitectura simple, funcional y adaptable para
+                aplicaciones mecatrónicas auxiliares dentro de una celda robótica.
             </p>
+
+            <a href="../index.html#projects" class="button">Ver más proyectos</a>
         </section>
 
     </main>
