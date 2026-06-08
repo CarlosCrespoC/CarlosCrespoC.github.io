@@ -1,9 +1,10 @@
+```html id="0wr5fu"
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1TENTH RoboRacer | Carlos Crespo</title>
+    <title>F1TENTH RoboRacer Ecuador | Carlos Crespo</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -21,101 +22,258 @@
         </nav>
 
         <div class="project-hero">
-            <p class="intro">Proyecto de robótica móvil y navegación autónoma</p>
+            <p class="intro">Robótica móvil · Navegación autónoma · ROS2</p>
+
             <h1>F1TENTH / RoboRacer Ecuador</h1>
+
             <p class="description">
-                El proyecto consistió en la integración y programación de un vehículo de
-                carreras autónomo a escala 1:10 bajo el estándar de la plataforma internacional F1TENTH.<br>
-                El objetivo principal fue diseñar un sistema  de software capaz de competir de forma autónoma
-                en circuitos cerrados, enfrentándose a los retos de la robótica móvil moderna en la competencia RoboRacer.
+                Integración y programación de un vehículo autónomo de carreras a escala 1:10,
+                basado en la plataforma F1TENTH. El sistema combinó percepción con LiDAR,
+                localización, planificación de ruta y control de trayectoria para competir
+                de forma autónoma en circuitos cerrados.
             </p>
+
+            <div class="project-tags">
+                <span>ROS2</span>
+                <span>F1TENTH</span>
+                <span>LiDAR Hokuyo</span>
+                <span>SLAM</span>
+                <span>AMCL</span>
+                <span>Pure Pursuit</span>
+                <span>f1tenth_gym</span>
+            </div>
 
             <a href="../index.html#projects" class="button">Volver a proyectos</a>
                         
             <div class="project-hero-media">
                 <img 
                     src="../assets/img/project-hero/F1TENTH/Foto Grupal RoboRacer Ganadores.jpg"
-                    alt="Vehículo autónomo F1TENTH utilizado en RoboRacer Ecuador">
+                    alt="Equipo ganador de RoboRacer Ecuador con vehículo autónomo F1TENTH">
             </div>
         </div>
     </header>
 
     <main>
 
-        <section class="section project-detail">
-            <h2>Problema</h2>
-            <p>
-                Los vehículos autónomos de carreras deben tomar decisiones críticas en milisegundos.<br>
-                El desafío radicaba en integrar subsistemas complejos de percepción, localización, control y navegación 
-                dentro de una plataforma con recursos computacionales embebidos limitados.<br>
-                El entorno dinámico de una pista de carreras real exige maximizar la velocidad de procesamiento y la estabilidad 
-                del vehículo, evitando colisiones mientras se traza la trayectoria óptima de manera continua y en tiempo real.
-            </p>
+        <section class="section project-overview-grid">
+            <div class="overview-card">
+                <span>Rol</span>
+                <strong>Navegación, simulación y validación del vehículo</strong>
+            </div>
+
+            <div class="overview-card">
+                <span>Área</span>
+                <strong>Robótica móvil y conducción autónoma</strong>
+            </div>
+
+            <div class="overview-card">
+                <span>Plataforma</span>
+                <strong>Vehículo F1TENTH escala 1:10 con ROS2</strong>
+            </div>
+
+            <div class="overview-card">
+                <span>Resultado</span>
+                <strong>1.º lugar en RoboRacer Ecuador</strong>
+            </div>
         </section>
 
-        <section class="section project-detail">
-            <h2>Solución</h2>
-            <p>
-                Se diseñó el algoritmo en ROS2, priorizando la velocidad y finalización de la carrera sin colisión. <br>
-                Nuestro equipo rompió con los esquemas tradicionales al no utilizar sensores inerciales (IMU), basando toda la percepción y el
-                posicionamiento puramente en un sensor LiDAR Hokuyo.<br>
-                Para la estimación de posición dentro del circuito, se implementó el paquete AMCL (Adaptive Monte Carlo Localization), logrando una
-                localización en tiempo real.<br>
-                Al utilizar el algoritmo de navegación "Pure Pursuit", se logró una conducción autónoma, permitiendo al vehículo seguir la 
-                trayectoria óptima en la pista, maximizando la velocidad y minimizando las colisiones.
-            </p>
+
+        <section class="section project-split">
+            <article class="project-info-card">
+                <h2>Problema</h2>
+                <p>
+                    Un vehículo autónomo de carreras debe percibir el entorno, localizarse,
+                    planificar una trayectoria y ejecutar control de dirección en tiempo real,
+                    manteniendo estabilidad y evitando colisiones dentro de una pista cerrada.
+                </p>
+            </article>
+
+            <article class="project-info-card">
+                <h2>Solución</h2>
+                <p>
+                    Se desarrolló un pipeline de navegación en ROS2 basado principalmente en LiDAR,
+                    utilizando SLAM para mapeo, AMCL para localización y Pure Pursuit para seguimiento
+                    de trayectoria, validando el sistema primero en simulación y luego en el vehículo real.
+                </p>
+            </article>
         </section>
+
 
         <section class="section project-detail">
             <h2>Mi contribución</h2>
-            <p>
-                Dentro del equipo, mi rol principal se centró en el desarrollo y la validación del pipeline de navegación y control autónomo, 
-                trabajando de manera iterativa entre el entorno virtual y las pruebas físicas a través de tres etapas:<br>
 
-                <b>Mapeo digital del circuito (SLAM):</b> Me encargué de la generación de los mapas de ocupación 2D necesarios para que el vehículo
-                pudiera orientarse. Para esto, utilicé la herramienta <b>slam_toolbox</b> de ROS2, procesando los escaneos del LiDAR Hokuyo para 
-                obtener una representación fiel de la pista.<br><br>
-
-                <b>Planificación de rutas y waypoints:</b> Apoyé en la definición de la trayectoria ideal sobre el mapa generado. Nos apoyamos en 
-                algoritmos de búsqueda de caminos como Dijkstra para calcular la secuencia de puntos de ruta que le permitirían al auto avanzar de la 
-                forma más eficiente posible.<br><br>
-
-                <b>Simulación y ajuste de control con Pure Pursuit:</b> Integré el algoritmo geométrico Pure Pursuit dentro del simulador oficial
-                f1tenth_gym. Esta plataforma fue clave para evaluar el comportamiento dinámico del auto y realizar los ajustes finos en los parámetros 
-                de velocidad y lookahead, lo que nos permitió validar que el código fuera seguro antes de transferirlo al hardware real y poner en riesgo 
-                el vehículo.<br><br>
-
-                Finalmente, participé en las pruebas físicas del vehículo, monitoreando el desempeño del sistema de navegación autónoma y realizando ajustes
-                en tiempo real para mejorar la estabilidad y la velocidad durante las carreras.
-            </p>
+            <div class="contribution-list">
+                <div>Generación de mapas de ocupación 2D del circuito mediante slam_toolbox.</div>
+                <div>Procesamiento de escaneos del LiDAR Hokuyo para representar la pista.</div>
+                <div>Apoyo en la definición de waypoints y trayectoria ideal sobre el mapa.</div>
+                <div>Uso de algoritmos de búsqueda de caminos para planificar rutas eficientes.</div>
+                <div>Integración y pruebas del algoritmo Pure Pursuit en f1tenth_gym.</div>
+                <div>Ajuste de parámetros de velocidad, lookahead y estabilidad de seguimiento.</div>
+                <div>Validación física del sistema de navegación autónoma en la pista real.</div>
+            </div>
         </section>
+
 
         <section class="section project-detail">
-            <h2>Proceso</h2>
-            <p>
-                El desarrollo del proyectos se estructuró en fases secuenciales e iterativas para garantizar la seguridad del vehiculo real.<br><br>
+            <h2>Arquitectura técnica</h2>
 
-                <b>Fase 1 - Simulación y desarrollo inicial:</b> Se comenzó con la implementación del algoritmo de navegación en el entorno de simulación 
-                f1tenth_gym, permitiendo validar la lógica de control y la planificación de rutas sin riesgos físicos.<br><br>
+            <div class="tech-grid">
+                <article class="tech-card">
+                    <h3>Percepción con LiDAR</h3>
+                    <p>
+                        El vehículo utilizó un LiDAR Hokuyo como sensor principal para obtener
+                        información del entorno y detectar los límites del circuito.
+                    </p>
+                </article>
 
-                <b>Fase 2 - Mapeo en entorno real :</b> Se realizaron pruebas de mapeo utilizando el LiDAR Hokuyo para generar mapas de ocupación del circuito real, 
-                ajustando los parámetros del SLAM para mejorar la precisión.<br><br>
+                <article class="tech-card">
+                    <h3>Mapeo del circuito</h3>
+                    <p>
+                        Se generaron mapas de ocupación 2D mediante SLAM, permitiendo construir
+                        una representación digital de la pista para navegación autónoma.
+                    </p>
+                </article>
 
-                <b>Fase 3 - Integración y pruebas físicas:</b> Con el código validado en simulación, se procedió a transferirlo al vehículo real. Se realizaron pruebas
-                iniciales en la pista, monitoreando el comportamiento del auto y ajustando los parámetros de control para optimizar la velocidad y la estabilidad, asegurando
-                que el vehículo pudiera completar las carreras sin colisionar.
-            </p>
+                <article class="tech-card">
+                    <h3>Localización y ruta</h3>
+                    <p>
+                        Se empleó AMCL para estimar la posición del vehículo sobre el mapa,
+                        junto con una ruta definida mediante waypoints y planificación de trayectoria.
+                    </p>
+                </article>
+
+                <article class="tech-card">
+                    <h3>Control de trayectoria</h3>
+                    <p>
+                        El seguimiento de ruta se realizó con Pure Pursuit, ajustando parámetros
+                        de lookahead y velocidad para equilibrar rapidez, estabilidad y seguridad.
+                    </p>
+                </article>
+            </div>
         </section>
+
+
+        <section class="section project-detail">
+            <h2>Proceso de desarrollo</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span>01</span>
+                    <div>
+                        <h3>Simulación inicial</h3>
+                        <p>
+                            Se implementó y probó la lógica de navegación en f1tenth_gym para validar
+                            el comportamiento del vehículo antes de transferir el código al hardware real.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>02</span>
+                    <div>
+                        <h3>Mapeo del circuito</h3>
+                        <p>
+                            Se realizaron pruebas con el LiDAR Hokuyo para generar mapas de ocupación
+                            del entorno real usando herramientas de SLAM en ROS2.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>03</span>
+                    <div>
+                        <h3>Planificación de trayectoria</h3>
+                        <p>
+                            Se definieron waypoints y rutas sobre el mapa, buscando una trayectoria
+                            eficiente para completar el circuito de forma rápida y segura.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>04</span>
+                    <div>
+                        <h3>Ajuste del controlador</h3>
+                        <p>
+                            Se calibraron parámetros de Pure Pursuit, incluyendo velocidad y lookahead,
+                            para mejorar el seguimiento de trayectoria y reducir riesgo de colisiones.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span>05</span>
+                    <div>
+                        <h3>Pruebas físicas y competencia</h3>
+                        <p>
+                            Se transfirió el sistema al vehículo real, se realizaron pruebas en pista
+                            y se ajustó el comportamiento del auto para maximizar estabilidad y desempeño.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <section class="section project-detail">
             <h2>Resultados</h2>
+
+            <div class="results-grid">
+                <article class="result-card">
+                    <strong>1.º lugar</strong>
+                    <p>Resultado obtenido en la competencia RoboRacer Ecuador.</p>
+                </article>
+
+                <article class="result-card">
+                    <strong>ROS2</strong>
+                    <p>Pipeline de navegación autónoma implementado sobre arquitectura robótica moderna.</p>
+                </article>
+
+                <article class="result-card">
+                    <strong>LiDAR</strong>
+                    <p>Navegación basada principalmente en percepción LiDAR, sin depender de IMU.</p>
+                </article>
+
+                <article class="result-card">
+                    <strong>Simulación</strong>
+                    <p>Validación previa en f1tenth_gym antes de pruebas físicas en pista.</p>
+                </article>
+            </div>
+        </section>
+
+
+        <section class="section project-detail">
+            <h2>Galería del proyecto</h2>
+
+            <div class="project-gallery">
+                <img 
+                    src="../assets/img/project-hero/F1TENTH/Foto Grupal RoboRacer Ganadores.jpg"
+                    alt="Equipo ganador de RoboRacer Ecuador con vehículo autónomo F1TENTH">
+
+                <!-- Agrega aquí más imágenes si tienes fotos del vehículo, pista, simulación o RViz -->
+                <!--
+                <img 
+                    src="../assets/img/project-hero/F1TENTH/vehiculo-f1tenth.jpg"
+                    alt="Vehículo autónomo F1TENTH utilizado en competencia">
+
+                <img 
+                    src="../assets/img/project-hero/F1TENTH/mapa-rviz.jpg"
+                    alt="Mapa de ocupación generado en ROS2 para navegación autónoma">
+                -->
+            </div>
+        </section>
+
+
+        <section class="section project-detail final-project-note">
+            <h2>Conclusión técnica</h2>
             <p>
-                🏆 Primer Lugar Nacional: <br>
-                La consistencia de los algoritmos y la robustez del sistema permitieron que el vehículo completara el circuito de manera perfecta, alcanzando la trazada más rápida y 
-                otorgándole al equipo el campeonato en la competencia RoboRacer Ecuador 2026.<br>
-                El proyecto sirvió como una excelente escuela práctica en sistemas embebidos, robótica móvil y control avanzado, demostrando la viabilidad de metodologías de 
-                simulación aplicadas al hardware real.
+                El proyecto permitió aplicar robótica móvil en un entorno competitivo real, integrando
+                percepción con LiDAR, mapeo, localización, planificación y control de trayectoria.
+                La validación progresiva desde simulación hasta hardware físico permitió desarrollar
+                un sistema autónomo estable, competitivo y capaz de completar el circuito sin colisiones.
             </p>
+
+            <a href="../index.html#projects" class="button">Ver más proyectos</a>
         </section>
 
     </main>
@@ -126,3 +284,4 @@
 
 </body>
 </html>
+```
